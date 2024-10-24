@@ -30,7 +30,7 @@ namespace pygodot {
 void system_quick_exit(int status) {
 #ifdef WINDOWS_ENABLED
 	TerminateProcess(GetCurrentProcess(), status);
-#elifdef _GLIBCXX_HAVE_QUICK_EXIT
+#elif defined(_GLIBCXX_HAVE_QUICK_EXIT)
 	std::quick_exit(status);
 #else
 	std::_Exit(status);

@@ -30,7 +30,7 @@ void system_quick_exit(int status) {
 #ifdef WINDOWS_ENABLED
 	TerminateProcess(GetCurrentProcess(), status);
 #else
-	std::_Exit(0);
+	std::_Exit(status);
 #endif
 }
 
